@@ -1,6 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
+
+//* <-- SCREENS -->
 import Landing from '../../screens/landing/Landing';
 import MoviesList from '../../screens/moviesList/MoviesList';
 import Movie from '../../screens/movie/Movie';

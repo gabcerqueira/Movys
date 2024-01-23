@@ -5,7 +5,7 @@
  * @format
  */
 
-//18:15
+//18:15 - project setup
 
 import React from 'react';
 import type {PropsWithChildren} from 'react';
