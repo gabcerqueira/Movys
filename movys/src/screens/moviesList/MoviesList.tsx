@@ -1,13 +1,18 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {Movie} from '../../models/Movie';
 
-type Props = {};
+type Props = {
+  movies: Movie[];
+};
 
-const MoviesList = (props: Props) => {
+const MoviesList = ({movies}: Props) => {
+  console.log('MOVIES : ', movies);
+
   return (
-    <View>
+    <ScrollView>
       <Text>MoviesList</Text>
-    </View>
+    </ScrollView>
   );
 };
 

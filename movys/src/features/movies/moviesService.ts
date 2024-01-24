@@ -1,8 +1,16 @@
-import {Movie} from '../../models/Movie';
+import {TMDBService} from '../../api/omdbService';
 
-const getMovies = async () => {
-  const movies: Movie[] = [];
-  return movies;
+const getMovies = async (page: number, {rejectWithValue}: any) => {
+  try {
+    console.log('TA CHEGANDO ? ');
+    const tmdbService = new TMDBService();
+
+    const movies = await tmdbService.fetchTopRatedMovies(page);
+
+    return movies;
+  } catch (error) {
+    return rejectWithValue((error as Error).message);
+  }
 };
 
 export const moviesService = {

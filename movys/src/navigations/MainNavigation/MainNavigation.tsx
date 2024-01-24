@@ -6,6 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Landing from '../../screens/landing/Landing';
 import MoviesList from '../../screens/moviesList/MoviesList';
 import Movie from '../../screens/movie/Movie';
+import MoviesListContainer from '../../screens/moviesList/MoviesListContainer';
 
 export type MainStackParamList = {
   Landing: undefined;
@@ -18,7 +19,7 @@ const MainStack = createStackNavigator<MainStackParamList>();
 const MainNavigation = () => {
   return (
     <MainStack.Navigator
-      initialRouteName="Landing"
+      initialRouteName="MoviesList"
       screenOptions={({navigation, route}) => ({
         headerShown: false,
         headerTitleAlign: 'center',
@@ -32,8 +33,8 @@ const MainNavigation = () => {
       />
       <MainStack.Screen
         name="MoviesList"
-        component={MoviesList}
-        options={{headerShown: false}}
+        component={MoviesListContainer}
+        options={{headerShown: true}}
       />
       <MainStack.Screen
         name="Movie"

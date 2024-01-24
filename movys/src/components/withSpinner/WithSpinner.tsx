@@ -1,21 +1,26 @@
-import React, { FunctionComponent } from "react";
+import React, {FunctionComponent} from 'react';
 
-import Spinner from "../spinner/Spinner";
+import Spinner from '../spinner/Spinner';
 
 interface withSpinnerProps {
-	isLoading: boolean;
+  isLoading: boolean;
 }
 
 const WithSpinner = <P extends object>(
-	WrappedComponent: FunctionComponent<P>
+  WrappedComponent: FunctionComponent<P>,
+  LoadingComponent: FunctionComponent<any>,
 ) => {
-	return ({ isLoading, ...otherProps }: P & withSpinnerProps) => {
-		return isLoading ? (
-			<Spinner />
-		) : (
-			<WrappedComponent {...(otherProps as P)} />
-		);
-	};
+  return ({isLoading, ...otherProps}: P & withSpinnerProps) => {
+    return isLoading ? (
+      LoadingComponent ? (
+        <LoadingComponent />
+      ) : (
+        <Spinner />
+      )
+    ) : (
+      <WrappedComponent {...(otherProps as P)} />
+    );
+  };
 };
 
 export default WithSpinner;
