@@ -1,5 +1,6 @@
 import {Skeleton} from '@rneui/base';
 import styled from 'styled-components/native';
+import {colors} from '../../styles/colors';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -7,6 +8,7 @@ export const Container = styled.View`
 
   justify-content: space-between;
   padding: 20px;
+  background-color: ${colors.background};
 `;
 
 export const SkeletonItem = styled(Skeleton)`

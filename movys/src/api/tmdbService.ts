@@ -30,10 +30,9 @@ export class TMDBService {
         release_date: mov.release_date,
         vote_average: mov.vote_average,
       }));
-      console.log('MOOOV : ', movies[0].img);
+
       return movies;
     } catch (error) {
-      console.log('ERR : error : ', (error as Error).message);
       throw (error as Error).message;
     }
   }

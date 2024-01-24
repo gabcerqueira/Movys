@@ -26,13 +26,13 @@ export const ContentContainer = styled.View`
 
 export const Title = styled.Text`
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 8px;
 `;
 
 export const Description = styled.Text`
   color: #fff;
-  font-size: 16px;
+  font-size: 12px;
   overflow: hidden;
 `;

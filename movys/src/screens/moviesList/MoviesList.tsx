@@ -48,7 +48,7 @@ const MoviesList = ({movies}: Props) => {
       dispatch(addMovies(currentPage + 1));
     },
   });
-  console.log('CURRENTpAGE : ', currentPage);
+
   return (
     <View style={{backgroundColor: colors.background}}>
       <FlatList
