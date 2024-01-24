@@ -34,12 +34,12 @@ const MainNavigation = () => {
       <MainStack.Screen
         name="MoviesList"
         component={MoviesListContainer}
-        options={{headerShown: true}}
+        options={{headerShown: true, headerTitle: 'Movys'}}
       />
       <MainStack.Screen
         name="Movie"
         component={Movie}
-        options={{headerShown: true}}
+        options={{headerShown: false, presentation: 'modal'}}
       />
     </MainStack.Navigator>
   );

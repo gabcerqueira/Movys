@@ -3,4 +3,6 @@ export type Movie = {
   title: string;
   img: string;
   overview: string;
+  release_date: string;
+  vote_average: number;
 };

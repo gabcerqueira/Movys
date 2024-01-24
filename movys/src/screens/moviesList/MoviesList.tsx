@@ -12,8 +12,6 @@ type Props = {
 };
 
 const MoviesList = ({movies}: Props) => {
-  console.log('MOVIES : ', movies);
-
   const dispatch = useAppDispatch();
 
   const navigation = useNavigation<NavigationProp<MainStackParamList>>();
@@ -29,6 +27,7 @@ const MoviesList = ({movies}: Props) => {
       <View style={styles.container}>
         {movies.map(movie => (
           <MoviesCard
+            key={movie.id}
             movie={movie}
             onPress={() => handleMovieNavigation(movie)}
           />

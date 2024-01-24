@@ -27,6 +27,8 @@ export class TMDBService {
         img: this.IMAGE_URL + mov.poster_path,
         id: mov.id,
         overview: mov.overview,
+        release_date: mov.release_date,
+        vote_average: mov.vote_average,
       }));
       console.log('MOOOV : ', movies[0].img);
       return movies;
