@@ -16,7 +16,7 @@ type Props = {
 
 const MoviesCard = ({movie, onPress}: Props) => {
   return (
-    <CardContainer onPress={onPress}>
+    <CardContainer onPress={onPress} testID="movies-card">
       <CardImage source={{uri: movie.img}} />
 
       <ContentContainer>

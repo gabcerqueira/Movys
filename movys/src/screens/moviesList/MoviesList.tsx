@@ -52,6 +52,7 @@ const MoviesList = ({movies}: Props) => {
   return (
     <View style={{backgroundColor: colors.background}}>
       <FlatList
+        testID="movies-list"
         data={movies}
         keyExtractor={item => item.id.toString()}
         renderItem={({item}) => (
