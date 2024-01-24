@@ -16,7 +16,6 @@ import {Icon} from '@rneui/themed';
 import {colors} from '../../styles/colors';
 import {NavigationProp} from '@react-navigation/native';
 import {MainStackParamList} from '../../navigations/MainNavigation/MainNavigation';
-import {AirbnbRating} from '@rneui/themed';
 type Props = {
   navigation: NavigationProp<MainStackParamList>;
 };

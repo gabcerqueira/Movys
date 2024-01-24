@@ -1,6 +1,6 @@
 import {createReducer} from '@reduxjs/toolkit';
 import {Movie} from '../../models/Movie';
-import {getMovie, getMovies} from './moviesActions';
+import {addMovies, getMovie, getMovies} from './moviesActions';
 
 interface moviesState {
   movies: Movie[];
@@ -34,5 +34,10 @@ export const moviesReducer = createReducer(initialState, builder => {
     ...state,
 
     movie: action.payload,
+  }));
+  builder.addCase(addMovies.fulfilled, (state, action) => ({
+    ...state,
+
+    movies: [...state.movies, ...action.payload],
   }));
 });

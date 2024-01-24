@@ -7,6 +7,7 @@ import Landing from '../../screens/landing/Landing';
 import MoviesList from '../../screens/moviesList/MoviesList';
 import Movie from '../../screens/movie/Movie';
 import MoviesListContainer from '../../screens/moviesList/MoviesListContainer';
+import {colors} from '../../styles/colors';
 
 export type MainStackParamList = {
   Landing: undefined;
@@ -23,6 +24,10 @@ const MainNavigation = () => {
       screenOptions={({navigation, route}) => ({
         headerShown: false,
         headerTitleAlign: 'center',
+        headerTintColor: colors.text,
+        headerStyle: {
+          backgroundColor: colors.background,
+        },
       })}>
       <MainStack.Screen
         name="Landing"

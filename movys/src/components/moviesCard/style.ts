@@ -2,8 +2,8 @@ import styled from 'styled-components/native';
 
 export const CardContainer = styled.TouchableOpacity`
   width: 48%;
-  height: 240px;
-  margin-bottom: 20px;
+  height: 250px;
+  margin: 5px;
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
