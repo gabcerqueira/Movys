@@ -39,7 +39,7 @@ const MainNavigation = () => {
       <MainStack.Screen
         name="Movie"
         component={Movie}
-        options={{headerShown: false}}
+        options={{headerShown: true}}
       />
     </MainStack.Navigator>
   );

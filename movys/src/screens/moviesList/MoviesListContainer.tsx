@@ -22,7 +22,7 @@ const MoviesListContainer = (props: Props) => {
     dispatch(getMovies(DEFAULT_PAGE));
   }, []);
 
-  return <Container isLoading={true} movies={movies} />;
+  return <Container isLoading={isLoading} movies={movies} />;
 };
 
 export default MoviesListContainer;

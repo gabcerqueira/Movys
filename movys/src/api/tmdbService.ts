@@ -10,23 +10,6 @@ export class TMDBService {
     this.IMAGE_URL = `${TMDBIMAGEURL}`;
   }
 
-  async fetchImageByReference(ref: string) {
-    try {
-      const response = await axios.request({
-        url: this.IMAGE_URL + ref,
-        method: 'GET',
-      });
-
-      if (response.data.error) {
-        throw new Error(response.data.error);
-      }
-
-      return response.data;
-    } catch (error) {
-      throw (error as Error).message;
-    }
-  }
-
   async fetchTopRatedMovies(page: number): Promise<Movie[]> {
     try {
       const response = await axios.request({
@@ -37,15 +20,15 @@ export class TMDBService {
         method: 'GET',
       });
 
-      console.log('RESP : ', response.data.results[0].title);
-
       if (response.data.Error) throw new Error(response.data.Error);
 
       const movies: Movie[] = response.data.results.map((mov: any) => ({
         title: mov.title,
-        img: mov.poster_path,
+        img: this.IMAGE_URL + mov.poster_path,
+        id: mov.id,
+        overview: mov.overview,
       }));
-
+      console.log('MOOOV : ', movies[0].img);
       return movies;
     } catch (error) {
       console.log('ERR : error : ', (error as Error).message);
