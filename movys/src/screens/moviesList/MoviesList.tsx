@@ -25,7 +25,7 @@ import {colors} from '../../styles/colors';
 type Props = {
   movies: Movie[];
 };
-
+const INITIAL_PAGE = 1;
 const MoviesList = ({movies}: Props) => {
   const dispatch = useAppDispatch();
 
@@ -38,8 +38,8 @@ const MoviesList = ({movies}: Props) => {
   };
 
   const {refreshing, onRefreshHandler}: any = usePullToRefresh({
-    onRefreshFunc: async () => {
-      dispatch(getMovies(1));
+    onRefreshFunction() {
+      dispatch(getMovies(INITIAL_PAGE));
     },
   });
 
@@ -47,6 +47,8 @@ const MoviesList = ({movies}: Props) => {
     fetchFunction: () => {
       dispatch(addMovies(currentPage + 1));
     },
+    totalPages: 10,
+    initialPage: 1,
   });
 
   return (
@@ -74,11 +76,7 @@ const MoviesList = ({movies}: Props) => {
         contentContainerStyle={styles.container}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
         ListFooterComponent={
-          <ActivityIndicator
-            //style={[styles.horizontal]}
-            size="small"
-            color={colors.text}
-          />
+          <ActivityIndicator size="large" color={colors.text} />
         }
       />
     </View>
