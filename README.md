@@ -2,6 +2,8 @@
 
 Movys is a React Native application that connects to The Movie DB API to provide users with information about movies, including details, images, and more.
 
+VIDEO : https://drive.google.com/file/d/1Bug4VgVRyRumNWblqOuxJtCVEoRsg2Bn/view?usp=sharing
+
 ## Features
 
 - **Browse Movies:** Explore a vast collection of movies with detailed information.
@@ -16,7 +18,7 @@ Follow these steps to set up and run the Movys app on your local machine:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/movys-app.git
+   git clone https://github.com/gabcerqueira/Movys.git
    ```
 
 2. **Install Dependencies:**
