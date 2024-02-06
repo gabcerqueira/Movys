@@ -37,7 +37,7 @@ const MoviesList = ({movies}: Props) => {
     navigation.navigate('Movie');
   };
 
-  const {refreshing, onRefreshHandler}: any = usePullToRefresh({
+  const {refreshing, onRefreshHandler} = usePullToRefresh({
     onRefreshFunction() {
       dispatch(getMovies(INITIAL_PAGE));
     },
@@ -48,7 +48,7 @@ const MoviesList = ({movies}: Props) => {
       dispatch(addMovies(currentPage + 1));
     },
     totalPages: 10,
-    initialPage: 1,
+    initialPage: INITIAL_PAGE,
   });
 
   return (
